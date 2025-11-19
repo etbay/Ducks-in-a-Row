@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://hddydhbbnp4p"]
+
+[ext_resource type="Script" uid="uid://bdbyq4moxb2at" path="res://scripts/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://b8dprkjiy7n6s" path="res://assets/Sprite-0003.png" id="2_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhqgy"]
+radius = 11.045361
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qhqgy"]
+gradient = SubResource("Gradient_g2els")
+width = 100
+height = 100
+fill = 1
+fill_from = Vector2(0.4871795, 0.46153846)
+fill_to = Vector2(0.8205129, 0.76068383)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "light")]
+collision_mask = 12
+script = ExtResource("1_onrkg")
+sprite = NodePath("Sprite2D")
+light = NodePath("PointLight2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_qhqgy")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_qhqgy")

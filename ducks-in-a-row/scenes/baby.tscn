@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dk3kfimibbx7c"]
+
+[ext_resource type="Texture2D" uid="uid://cauwgyug28bc1" path="res://assets/Sprite-0004.png" id="1_k8j53"]
+[ext_resource type="Script" uid="uid://bdbyq4moxb2at" path="res://scripts/player.gd" id="1_wpfv3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8j53"]
+radius = 6.0
+
+[sub_resource type="Gradient" id="Gradient_g2els"]
+colors = PackedColorArray(0.23031491, 0.23031494, 0.23031494, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_wpfv3"]
+gradient = SubResource("Gradient_g2els")
+width = 70
+height = 70
+fill = 1
+fill_from = Vector2(0.4871795, 0.46153846)
+fill_to = Vector2(0.8205129, 0.76068383)
+
+[node name="Baby" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "light")]
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_wpfv3")
+sprite = NodePath("Sprite2D")
+light = NodePath("PointLight2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k8j53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_k8j53")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = SubResource("GradientTexture2D_wpfv3")

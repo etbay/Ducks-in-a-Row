@@ -1,0 +1,4 @@
+[gd_resource type="SystemFont" format=3 uid="uid://kq2jjigsfm2i"]
+
+[resource]
+font_names = PackedStringArray("Javanese Text")

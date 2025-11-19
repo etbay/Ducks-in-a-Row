@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://648ef2y1qtk7"]
+
+[ext_resource type="Script" uid="uid://c7deamy6sp4nq" path="res://scripts/level_data.gd" id="1_5v2wr"]
+[ext_resource type="PackedScene" uid="uid://wb16gwllcmwb" path="res://scenes/level_five.tscn" id="1_xqywb"]
+
+[resource]
+script = ExtResource("1_5v2wr")
+duck_count = 8
+scene = ExtResource("1_xqywb")
+number = 5
+metadata/_custom_type_script = "uid://c7deamy6sp4nq"
